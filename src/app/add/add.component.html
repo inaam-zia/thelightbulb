@@ -1,0 +1,98 @@
+<header>
+  <form
+    class="form-class wrap-form"
+    [formGroup]="addEdit"
+    (ngSubmit)="submit(addEdit.value)"
+    *ngIf="addEdit"
+  >
+    <div class="form-outline mb-4 heading">
+      <h3 *ngIf="addButton">Create a User</h3>
+      <h3 *ngIf="!addButton">Edit a User</h3>
+    </div>
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input
+            type="text"
+            id="firstName"
+            formControlName="fname"
+            class="form-control"
+          />
+          <label class="form-label" for="firstName">First name</label>
+          <br />
+          <span
+            style="color: red"
+            *ngIf="addEdit.value.fname == '' && userFname && userFname.touched"
+            >Enter First Name
+          </span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lname"
+            class="form-control"
+          />
+          <label class="form-label" for="lname">Last name</label>
+          <br />
+          <span
+            style="color: red"
+            *ngIf="addEdit.value.lname == '' && userLname && userLname.touched"
+            >Enter Last Name
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-outline mb-4">
+      <input
+        type="email"
+        formControlName="emailId"
+        id="Email"
+        class="form-control"
+      />
+      <label class="form-label" for="Email">Email</label>
+      <br />
+      <span
+        style="color: red"
+        *ngIf="addEdit.value.emailId == '' && userEmail && userEmail.touched"
+        >Enter an Email
+      </span>
+    </div>
+    <div class="form-outline mb-4">
+      <input
+        type="text"
+        formControlName="dept"
+        id="Department"
+        class="form-control"
+      />
+      <label class="form-label" for="Department">Department</label>
+    </div>
+    <div class="form-outline mb-4">
+      <input
+        type="date"
+        max="{{ maxDate }}"
+        formControlName="dob"
+        id="form6Example6"
+        class="form-control"
+      />
+
+      <label class="form-label" for="DOB">Date of birth</label>
+      <br />
+      <span
+        style="color: red"
+        *ngIf="addEdit.value.dob == '' && userDob && userDob.touched"
+        >Enter an Date of Birth
+      </span>
+    </div>
+
+    <button
+      [disabled]="addEdit.invalid"
+      type="submit"
+      class="btn btn-primary btn-block mb-4"
+    >
+      {{ buttonValue }}
+    </button>
+  </form>
+</header>

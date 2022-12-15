@@ -1,0 +1,28 @@
+.nav-items {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  list-style: none;
+  align-content: center;
+  height: 50px;
+  width: 100%;
+  background-color: blue;
+}
+.list-items {
+  align-self: center;
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+footer {
+  background-color: blue;
+  text-align: center;
+  height: auto;
+  margin-bottom: 0px;
+  color: white;
+}
+
+header {
+  width: 100%;
+}

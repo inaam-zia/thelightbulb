@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div *ngFor="let item of data" class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{ item.fname }} {{ item.lname }}</h5>
+      <p class="card-text">
+        {{ item.emailId }}
+      </p>
+      <p class="card-text">
+        {{ item.dept }}
+      </p>
+      <p class="card-text">
+        {{ item.dob | age }}
+      </p>
+      <a routerLink="/add/{{ item.empId }}" class="btn btn-primary"
+        >Update user</a
+      >
+    </div>
+  </div>
+</div>
